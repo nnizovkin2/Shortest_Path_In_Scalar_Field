@@ -1,0 +1,55 @@
+https://gist.github.com/mboes/040b60baa2b0e24ce668b6171db909c5
+Coding challenge
+The problem
+
+You are a burglar, robbing a bank. In order to get to the vault, you must go through a room with a number of detectors, whose efficacy in detecting the presence of a moving object is a function of the distance of that object with the detector. Your goal is to find, with the highest precision possible, the path across the room with the lowest probability of detection.
+
+You will write a program that, given the description of the room including your starting position and the location of the vault, produces a single floating point number as output. This floating point number represents the lowest probability of detection achievable given the number and location of the detectors, rounded to the 3rd decimal digit.
+Detectors
+
+A detector at coordinate X will detect any object moving on a path intersecting coordinate X with probability 1. For any object at distance D from the detector, the probability of detection per meter is given by:
+
+exp (-(π*D/L)^2)
+
+where L is the width of the room (see below) and x^2 is the square of x.
+Input
+
+The main input to the program is a *.map file, which has the following format:
+
+    The first line is a single floating point number L, representing the length of the room, which is assumed to always be a square.
+    The second line is a single integer N, giving the number of detectors in the room.
+    all following lines in the file are pairs are coordinates, i.e. pairs of floating point numbers, separated by a space character. The number of coordinates in the file is given by N.
+
+The coordinate system is x,y based, with the origin located in the bottom left corner of the room. Coordinates never include negative numbers.
+
+Starting position of the burglar: assumed to always be exactly midway across the bottom edge of the room.
+
+Position of the vault: assumed to always be exactly midway across the top edge of the room.
+
+Example input file:
+
+25.0
+5
+2.423929917008996 20.187139309438546
+19.39788132776695 14.174570106439353
+1.3175678970133191 10.019351994529405
+1.0536920857525445 2.8936703202385115
+16.739302303324447 15.87541372165791
+
+Feel free to create more input files for testing purposes.
+Example usage
+
+The program should be used as follows:
+
+$ burglar bank12.map
+0.245
+
+The program should return exit status 0 if the hypothetical bank12.map file was parsed successfully. Returns exit status 1 otherwise.
+Instructions
+
+    You should implement your solution in Rust, since you applied to the "Rust Engineer" position, though you may fallback to whichever language you feel most comfortable with. You should feel free to use whatever libraries are available in your language's ecosystem, though please flag any more unusual libraries in use, particularly if they pertain directly to the problem space. All written code should be your own, and any code taken from elsewhere (e.g. a Stackoverflow answer) should be clearly marked as such.
+    Deliverables:
+        Full compilable source code.
+        a README file including instructions to compile the source code.
+        a DESIGN file describing in as much detail as possible the design of the program, along with a rationale for this design, and a discussion of possible alternatives.
+        optionally: a full test suite for the source code.
