@@ -40,7 +40,7 @@ public class ShortestPathSearcher {
         q.add(start);
         cells[(GRID_SIZE + 1) / 2][0] = start;
         while(!q.isEmpty()) {
-            System.out.println(q.size());
+//            System.out.println(q.size());
             Cell cell = q.poll();
             if(cell.isVisited) {
                 continue;
