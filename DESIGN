@@ -56,7 +56,7 @@ h(A, I) = d(A, I) = max(1/2 + 1/2, 1/3 + 1/3) = 1
 Оценка для разных методов численного интегрирования
 https://www.researchgate.net/profile/Dudley-Benton-2/post/What_is_the_best_Numerical_integration_method_and_why/attachment/602e9389af00c40001c9ceaa/AS%3A992597782843396%401613665161918/download/Comparison+of+Methods+for+Numerical+Integration+in+Computing+Cooling+Tower+Demand+Curves.pdf
 
-На вскидку 2-100 Гаусса с Дейкстрой должно за глаза хватить.
+На вскидку трапеции с Дейкстрой должно хватить.
 
 
 
